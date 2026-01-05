@@ -31,7 +31,7 @@ jobs:
       - name: Create RDP User with Fixed Password
         shell: pwsh
         run: |
-          $password = "MR.English2008"
+          $password = "saad"
           $securePass = ConvertTo-SecureString $password -AsPlainText -Force
 
           if (-not (Get-LocalUser -Name "RDP" -ErrorAction SilentlyContinue)) {
@@ -89,7 +89,7 @@ jobs:
             exit 1
           }
 
-          Write-Host "RDP is reachable ✔"
+          Write-Host "RDP is reachable ✓"
 
       - name: Maintain Connection + Watch RDP User
         shell: pwsh
@@ -97,7 +97,7 @@ jobs:
           Write-Host "`n=== RDP ACCESS ==="
           Write-Host "Address : $env:TAILSCALE_IP"
           Write-Host "Username: RDP"
-          Write-Host "Password: MR.English2008"
+          Write-Host "Password: saad"
           Write-Host "==================`n"
 
           $profile = "C:\Users\RDP"
